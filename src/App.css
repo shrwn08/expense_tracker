@@ -1,0 +1,23 @@
+:root {
+  --background: #F9FAFB;
+  --foreground: #111827;
+  --primary: #3B82F6;
+  --accent: #10B981;
+  --border: #E5E7EB;
+  --muted: #6B7280;
+  --card: #ffffff;
+  --input: #F3F4F6;
+  --error: #EF4444;
+}
+
+.dark {
+  --background: #111827;
+  --foreground: #F9FAFB;
+  --primary: #60A5FA;
+  --accent: #34D399;
+  --border: #374151;
+  --muted: #9CA3AF;
+  --card: #1F2937;
+  --input: #374151;
+  --error: #F87171;
+}
