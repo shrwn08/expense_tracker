@@ -1,0 +1,34 @@
+import { useEffect, useRef } from "react";
+import "./App.css";
+import {  useSelector } from "react-redux";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+
+function App() {
+  const themeDiv = useRef();
+  const { theme } = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    if (theme === true) {
+      themeDiv.current.classList.remove("light");
+      themeDiv.current.classList.add("dark");
+    } else {
+      themeDiv.current.classList.remove("dark");
+      themeDiv.current.classList.add("light");
+    }
+  }, [themeDiv, theme]);
+
+  
+
+  return (
+    <div
+      ref={themeDiv}
+      className="bg-[var(--background)] max-w-screen min-h-screen"
+    >
+    <Header />
+     <Home />
+    </div>
+  );
+}
+
+export default App;
