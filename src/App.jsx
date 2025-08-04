@@ -1,13 +1,15 @@
 import { useEffect, useRef } from "react";
 import "./App.css";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import routes from "./routes/routes";
+import { RouterProvider } from "react-router-dom";
 
 function App() {
   const themeDiv = useRef();
   const { theme } = useSelector((state) => state.theme);
-
+const router = routes();
   useEffect(() => {
     if (theme === true) {
       themeDiv.current.classList.remove("light");
@@ -18,15 +20,12 @@ function App() {
     }
   }, [themeDiv, theme]);
 
-  
-
   return (
     <div
       ref={themeDiv}
       className="bg-[var(--background)] max-w-screen min-h-screen"
     >
-    <Header />
-     <Home />
+      <RouterProvider router={router} />
     </div>
   );
 }

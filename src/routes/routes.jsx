@@ -4,13 +4,18 @@ import Home from "../pages/Home";
 import AddExpense from "../pages/AddExpense";
 import AddIncome from "../pages/AddIncome";
 import NotFound from "../pages/NotFound";
+import Layout from "../Layout/Layout";
 
 function routes() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <Layout />,
       children: [
+        {
+            path : "/",
+            element: <Home />
+        },
         {
           path: "/add-expense",
           element: <AddExpense />,
